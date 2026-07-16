@@ -1,0 +1,60 @@
+{
+  "name": "outlook-scraper",
+  "version": "0.1.0",
+  "description": "Read and download Office 365 / Outlook Web (OWA) email — folders, messages, attachments — using a persisted authenticated browser session. No Graph API registration required.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "outlook-scraper": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "docs",
+    ".claude/skills/outlook-email"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "cli": "tsx src/cli.ts",
+    "example": "tsx examples/basic.ts",
+    "test": "node --import tsx --test --test-concurrency=1 test/*.test.ts",
+    "test:unit": "node --import tsx --test test/eml.test.ts test/restriction.test.ts test/parse.test.ts test/mime.test.ts",
+    "test:live": "node --import tsx --test --test-concurrency=1 test/live.test.ts",
+    "postinstall": "playwright install chromium",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "outlook",
+    "office365",
+    "owa",
+    "email",
+    "scraper",
+    "playwright",
+    "download",
+    "eml",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "playwright": "^1.48.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

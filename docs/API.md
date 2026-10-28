@@ -13,7 +13,7 @@ import { OutlookScraper } from "outlook-scraper";
 | `headed` | `true` | Show the browser window (required for interactive login). |
 | `strategy` | `rest` | `auto` \| `rest` \| `dom` (only `rest` implemented). |
 | `loginTimeout` | `300000` | Max ms to wait for interactive login. |
-| `locale` | `es-ES` | Browser locale. |
+| `locale` | system locale | Browser locale. |
 | `timeout` | `30000` | Per-request timeout. |
 
 ## Lifecycle

@@ -173,7 +173,7 @@ export interface OutlookScraperOptions {
   strategy?: Strategy;
   /** Max time (ms) to wait for the user to complete interactive login. Default `300000`. */
   loginTimeout?: number;
-  /** Browser locale. Default `"es-ES"`. */
+  /** Browser locale. Default: the system locale (e.g. `en-US`). */
   locale?: string;
   /** Per-request/navigation timeout (ms). Default `30000`. */
   timeout?: number;

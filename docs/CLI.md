@@ -8,7 +8,7 @@ All commands share these options:
 | `--origin <url>` | `https://outlook.office.com` | Mail app origin (change for a different cloud). |
 | `--strategy <mode>` | `rest` | `auto` \| `rest` \| `dom` (only `rest` is implemented today). |
 | `--headless` | off | Run the browser headless. Only works once a session is persisted. |
-| `--locale <locale>` | `es-ES` | Browser locale. |
+| `--locale <locale>` | system locale | Browser locale. |
 | `--timeout <ms>` | `30000` | Per-operation timeout. |
 
 ## `login`

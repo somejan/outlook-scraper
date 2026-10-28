@@ -27,7 +27,7 @@
     "cli": "tsx src/cli.ts",
     "example": "tsx examples/basic.ts",
     "test": "node --import tsx --test --test-concurrency=1 test/*.test.ts",
-    "test:unit": "node --import tsx --test test/eml.test.ts test/restriction.test.ts test/parse.test.ts test/mime.test.ts",
+    "test:unit": "node --import tsx --test test/eml.test.ts test/restriction.test.ts test/parse.test.ts test/mime.test.ts test/system.test.ts",
     "test:live": "node --import tsx --test --test-concurrency=1 test/live.test.ts",
     "postinstall": "playwright install chromium",
     "prepublishOnly": "npm run clean && npm run build"

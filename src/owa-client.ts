@@ -21,8 +21,8 @@ import type { BrowserSession } from "./browser.js";
 /** Exchange server version advertised by the new Outlook. */
 const REQUEST_SERVER_VERSION = "V2018_01_08";
 
-/** Default time zone sent in the request header (affects date interpretation). */
-const DEFAULT_TIME_ZONE = "Romance Standard Time";
+/** Fallback time zone (Windows id) sent in the request header. */
+const DEFAULT_TIME_ZONE = "UTC";
 
 /** `Prefer` header the mail app sends; keeps returned item ids immutable. */
 const PREFER =

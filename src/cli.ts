@@ -40,7 +40,7 @@ function withCommon(cmd: Command): Command {
       new Option("--strategy <mode>", "access strategy").choices(["auto", "rest", "dom"]).default("rest")
     )
     .option("--headless", "run the browser headless (only works with an already-persisted session)", false)
-    .option("--locale <locale>", "browser locale", "es-ES")
+    .option("--locale <locale>", "browser locale (default: system locale)")
     .option("--timeout <ms>", "per-operation timeout in ms", "30000");
 }
 

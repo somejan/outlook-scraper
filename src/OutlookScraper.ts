@@ -23,6 +23,7 @@ import { OwaClient } from "./owa-client.js";
 import { findFolders, getFolder } from "./actions/folders.js";
 import { findItems, getItem } from "./actions/items.js";
 import { searchItems } from "./actions/search.js";
+import { systemLocale, systemWindowsTimeZone } from "./system.js";
 import { parseMimeAttachments } from "./mime.js";
 import { emlContent, emlFileName, mboxEntry } from "./export.js";
 import type {
@@ -43,7 +44,6 @@ const DEFAULTS = {
   headed: true,
   strategy: "rest" as Strategy,
   loginTimeout: 300_000,
-  locale: "es-ES",
   timeout: 30_000,
 };
 
@@ -71,7 +71,7 @@ export class OutlookScraper {
       origin: this.origin,
       mailUrl: `${this.origin}/mail/`,
       headed: options.headed ?? DEFAULTS.headed,
-      locale: options.locale ?? DEFAULTS.locale,
+      locale: options.locale ?? systemLocale(),
       timeout: this.timeout,
       loginTimeout: options.loginTimeout ?? DEFAULTS.loginTimeout,
     });
@@ -84,7 +84,7 @@ export class OutlookScraper {
   async connect(): Promise<void> {
     if (this.connected) return;
     await this.session.ensureAuthenticated();
-    this.client = new OwaClient(this.session, this.timeout);
+    this.client = new OwaClient(this.session, this.timeout, systemWindowsTimeZone());
     this.connected = true;
   }
 
